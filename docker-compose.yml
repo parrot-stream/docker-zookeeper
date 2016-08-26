@@ -6,7 +6,7 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        image: mcapitanio/zookeeper:latest
+        image: mcapitanio/zookeeper:3.4.8
         networks:
             - hadoop
         volumes:

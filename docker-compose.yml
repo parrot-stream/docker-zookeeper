@@ -3,36 +3,26 @@ version: "2"
 services:
 
     zookeeper:
-        extends:
-            file:   zookeeper.yml
-            service: zookeeper
-
-    hadoop:
         build:
             context: .
             dockerfile: Dockerfile
-        image: mcapitanio/hadoop:latest
-        links:
-            - zookeeper
+        image: mcapitanio/zookeeper:latest
         networks:
             - hadoop
         volumes:
-            - hadoop_conf:/opt/hadoop/etc/hadoop
-            - hadoop_logs:/opt/hadoop/logs
-            - hadoop_hdfs:/hdfs
+            - zookeeper_data:/zookeeper/data
+            - zookeeper_logs:/zookeeper/logs
+            - zookeeper_conf:/opt/zookeeper/conf
+
         ports:
-            - "50070:50070"
-            - "50075:50075"
-            - "8020:8020"
-            - "8042:8042"
-            - "8088:8088"
-            - "8188:8188"
-            - "19888:19888"
+            - "2181:2181"
+            - "2888:2888"
+            - "3888:3888"
 
 volumes:
-    hadoop_conf:
-    hadoop_hdfs:
-    hadoop_logs:
+    zookeeper_data:
+    zookeeper_logs:
+    zookeeper_conf:
 
 
 networks:

@@ -38,4 +38,5 @@ EXPOSE 2181 2888 3888
 
 VOLUME [ "/zookeeper/data", "/zookeeper/logs", "/opt/zookeeper/conf" ]
 
+
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]

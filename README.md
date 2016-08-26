@@ -38,4 +38,4 @@ There are 3 named volumes defined:
 ### Available tags:
 
 - Apache ZooKeeper 3.5.2 ([3.5.2](https://github.com/mcapitanio/docker-zookeeper/blob/3.5.2/Dockerfile), [latest](https://github.com/mcapitanio/docker-zookeeper/blob/latest/Dockerfile))
-- Apache Hadoop 3.4.8 ([3.4.8](https://github.com/mcapitanio/docker-zookeeper/blob/3.4.8/Dockerfile))
+- Apache ZooKeeper 3.4.8 ([3.4.8](https://github.com/mcapitanio/docker-zookeeper/blob/3.4.8/Dockerfile))

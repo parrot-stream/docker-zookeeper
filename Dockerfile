@@ -4,15 +4,16 @@ MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
 USER root
 
-ENV ZOOKEEPER_VER 3.5.2
+ENV ZOOKEEPER_VER 3.4.8
 ENV ZOOKEEPER_HOME /opt/zookeeper
 
 ENV PATH $ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOME/sbin:$PATH
 
 # Install needed packages
-RUN yum clean all; yum update -y; yum clean all
+RUN yum clean all; yum update -y
 RUN yum install -y ant which openssh-clients openssh-server python-setuptools
 RUN easy_install supervisor
+RUN yum clean all
 
 WORKDIR /opt/docker
 
@@ -37,6 +38,5 @@ RUN chown root:root /root/.ssh/config
 EXPOSE 2181 2888 3888
 
 VOLUME [ "/zookeeper/data", "/zookeeper/logs", "/opt/zookeeper/conf" ]
-
 
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]

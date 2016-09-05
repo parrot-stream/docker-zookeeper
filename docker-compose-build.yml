@@ -25,5 +25,5 @@ volumes:
     zookeeper_conf:
 
 networks:
-    default:
+    hadoop:
         driver: bridge

@@ -10,9 +10,10 @@ ENV ZOOKEEPER_HOME /opt/zookeeper
 ENV PATH $ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOME/sbin:$PATH
 
 # Install needed packages
-RUN yum clean all; yum update -y; yum clean all
+RUN yum clean all; yum update -y
 RUN yum install -y ant which openssh-clients openssh-server python-setuptools
 RUN easy_install supervisor
+RUN yum clean all
 
 WORKDIR /opt/docker
 

@@ -4,14 +4,30 @@ MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
 USER root
 
-ENV ZOOKEEPER_VER 3.4.8
-ENV ZOOKEEPER_HOME /opt/zookeeper
+ARG httpProxyHost
+ARG httpProxyPort
 
-ENV PATH $ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOME/sbin:$PATH
+ENV http_proxy ${http_proxy}
+ENV https_proxy ${https_proxy}
+ENV no_proxy ${no_proxy}
+ENV httpProxyHost ${httpProxyHost}
+ENV httpProxyPort ${httpProxyPort}
+
+ENV ANT_OPTS "-Dproxy.httpHost=$httpProxyHost -Dproxy.httpPort=$httpProxyPort -Dproxy.httpsHost=$httpsProxyHost -Dproxy.httpsPort=$httpsProxyPort"
+
+ENV ZOOKEEPER_VER 3.4.8
+ENV EXHIBITOR_VER 1.5.6
+ENV GRADLE_VER 3.0
+
+ENV ZOOKEEPER_HOME /opt/zookeeper
+ENV EXHIBITOR_HOME /opt/exhibitor
+ENV GRADLE_HOME /opt/gradle
+
+ENV PATH $GRADLE_HOME/bin:$EXHIBITOR_HOME/bin:$ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOME/sbin:$PATH
 
 # Install needed packages
 RUN yum clean all; yum update -y
-RUN yum install -y ant which openssh-clients openssh-server python-setuptools
+RUN yum install -y ant which openssh-clients openssh-server python-setuptools git
 RUN easy_install supervisor
 RUN yum clean all
 
@@ -30,6 +46,20 @@ COPY ./etc /etc
 
 RUN mkdir -p /zookeeper/data; \
     mkdir -p /zookeeper/logs
+
+# Install Gradle
+RUN wget -N https://services.gradle.org/distributions/gradle-$GRADLE_VER-all.zip; \
+    unzip gradle-$GRADLE_VER-all.zip -d /opt; \
+    mv /opt/gradle-$GRADLE_VER $GRADLE_HOME; \
+    rm gradle-$GRADLE_VER-all.zip
+
+# Netflix Exhibitor
+RUN git clone -b v$EXHIBITOR_VER https://github.com/Netflix/exhibitor
+RUN cd exhibitor; \
+    ./gradlew clean distTar
+RUN ls -latr exhibitor
+RUN tar -xvf exhibitor/exhibitor-standalone/build/distributions/exhibitor-standalone-1.5.7-SNAPSHOT.tar -C /opt; \
+    mv /opt/exhibitor-standalone-1.5.7-SNAPSHOT $EXHIBITOR_HOME
 
 ADD ssh_config /root/.ssh/config
 RUN chmod 600 /root/.ssh/config

@@ -6,6 +6,8 @@ ___
 
 This image runs the official [*Apache ZooKeeper*](https://zookeeper.apache.org/) on a Centos Linux distribution.
 
+It also runs [*Netflix Exhibitor*](https://github.com/Netflix/exhibitor.git) as a monitoring, backup/recovery, cleanup and visualization tool for ZooKeeper.
+
 The *latest* tag of this image is build with the [latest stable](https://zookeeper.apache.org/releases.html) release of Apache ZooKeeper on Centos 7.
 
 You can pull it with:
@@ -34,6 +36,10 @@ There are 3 named volumes defined:
 - **zookeeper_conf** which points to ZooKeeper configuration directory
 - **zookeeper_logs** which points to ZooKeeper log directory
 - **zookeeper_data** which contains the ZooKeeper data and transaction logs
+
+Once started you'll be able to read the Netflix Exhibitor url for your environment (plase note that the ip is non static!):
+
+**Netflix Exhibitor url**:	http://172.17.0.3:8099
 
 ### Available tags:
 

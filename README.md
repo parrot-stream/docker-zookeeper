@@ -31,6 +31,12 @@ Run with Docker Compose:
 
 Setting the project name to *docker* with the **-p** option is useful to share the named data volumes created by containers started with other docker-compose.yml configurations.
 
+Once started you'll be able to read the list of all the Netflix Exhibitor Web GUI url:
+
+| **Exhibitor Web UIs**  |**URL**                   |
+|:-----------------------|:-------------------------|
+| *Netflix Exhibitor*    | http://localhost:8099    |
+
 There are 3 named volumes defined:
 
 - **zookeeper_conf** which points to ZooKeeper configuration directory

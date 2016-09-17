@@ -26,10 +26,8 @@ fi
 
 supervisorctl start exhibitor
 
-ip=`awk 'END{print $1}' /etc/hosts`
-
 echo -e "\n\n--------------------------------------------------------------------------------"
 echo -e "You can now access to the Netflix Exhibitor for ZooKeeper url:\n"
-echo -e "     http://$ip:8099"
+echo -e "     http://localhost:8099"
 echo -e "\nMantainer:   Matteo Capitanio <matteo.capitanio@gmail.com>"
 echo -e "--------------------------------------------------------------------------------\n\n"

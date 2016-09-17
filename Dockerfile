@@ -65,7 +65,7 @@ ADD ssh_config /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
 RUN chown root:root /root/.ssh/config
 
-EXPOSE 2181 2888 3888
+EXPOSE 2181 2888 3888 8099
 
 VOLUME [ "/zookeeper/data", "/zookeeper/logs", "/opt/zookeeper/conf" ]
 

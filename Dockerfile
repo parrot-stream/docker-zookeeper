@@ -6,14 +6,16 @@ USER root
 
 ARG httpProxyHost
 ARG httpProxyPort
+ARG httpProxyUrl
+ARG httpsProxyUrl
 
-ENV http_proxy ${http_proxy}
-ENV https_proxy ${https_proxy}
+ENV http_proxy $httpProxyUrl
+ENV https_proxy $httpsProxyUrl
 ENV no_proxy ${no_proxy}
-ENV httpProxyHost ${httpProxyHost}
-ENV httpProxyPort ${httpProxyPort}
+ENV httpProxyHost $httpProxyHost
+ENV httpProxyPort $httpProxyPort
 
-ENV ANT_OPTS "-Dproxy.httpHost=$httpProxyHost -Dproxy.httpPort=$httpProxyPort -Dproxy.httpsHost=$httpsProxyHost -Dproxy.httpsPort=$httpsProxyPort"
+ENV ANT_OPTS "-Dproxy.httpHost=$httpProxyHost -Dproxy.httpPort=$httpProxyPort -Dproxy.httpsHost=$httpProxyHost -Dproxy.httpsPort=$httpProxyPort"
 
 ENV ZOOKEEPER_VER 3.4.8
 ENV EXHIBITOR_VER 1.5.6

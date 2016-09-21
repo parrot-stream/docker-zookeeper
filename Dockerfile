@@ -11,10 +11,6 @@ ARG httpsProxyUrl
 
 ENV http_proxy $httpProxyUrl
 ENV https_proxy $httpsProxyUrl
-ENV no_proxy ${no_proxy}
-ENV httpProxyHost $httpProxyHost
-ENV httpProxyPort $httpProxyPort
-
 ENV ANT_OPTS "-Dproxy.httpHost=$httpProxyHost -Dproxy.httpPort=$httpProxyPort -Dproxy.httpsHost=$httpProxyHost -Dproxy.httpsPort=$httpProxyPort"
 
 ENV ZOOKEEPER_VER 3.4.8
@@ -62,7 +58,7 @@ RUN cd exhibitor; \
 RUN ls -latr exhibitor
 RUN tar -xvf exhibitor/exhibitor-standalone/build/distributions/exhibitor-standalone-1.5.7-SNAPSHOT.tar -C /opt; \
     mv /opt/exhibitor-standalone-1.5.7-SNAPSHOT $EXHIBITOR_HOME
-
+    
 ADD ssh_config /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
 RUN chown root:root /root/.ssh/config
@@ -72,3 +68,7 @@ EXPOSE 2181 2888 3888 8099
 VOLUME [ "/zookeeper/data", "/zookeeper/logs", "/opt/zookeeper/conf" ]
 
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]
+
+ENV ANT_OPTS ""
+ENV http_proxy ""
+ENV https_proxy ""

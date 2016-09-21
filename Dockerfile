@@ -44,7 +44,7 @@ RUN cd $ZOOKEEPER_HOME; \
 RUN rm $ZOOKEEPER_HOME/conf/*.cfg; \
     rm $ZOOKEEPER_HOME/conf/*.properties
 COPY zookeeper/ $ZOOKEEPER_HOME/
-COPY ./etc /etc
+COPY ./etc/ /etc/
 
 RUN mkdir -p /zookeeper/data; \
     mkdir -p /zookeeper/logs

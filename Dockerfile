@@ -12,7 +12,7 @@ ARG httpsProxyUrl
 ENV http_proxy $httpProxyUrl
 ENV https_proxy $httpsProxyUrl
 ENV ANT_OPTS "-Dproxy.httpHost=$httpProxyHost -Dproxy.httpPort=$httpProxyPort -Dproxy.httpsHost=$httpProxyHost -Dproxy.httpsPort=$httpProxyPort"
-
+RUN echo $ANT_OPTS
 ENV ZOOKEEPER_VER 3.4.8
 ENV EXHIBITOR_VER 1.5.6
 ENV GRADLE_VER 3.0

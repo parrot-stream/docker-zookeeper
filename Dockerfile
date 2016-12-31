@@ -4,15 +4,6 @@ MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
 USER root
 
-ARG httpProxyHost
-ARG httpProxyPort
-ARG httpProxyUrl
-ARG httpsProxyUrl
-
-ENV http_proxy $httpProxyUrl
-ENV https_proxy $httpsProxyUrl
-ENV ANT_OPTS "-Dproxy.httpHost=$httpProxyHost -Dproxy.httpPort=$httpProxyPort -Dproxy.httpsHost=$httpProxyHost -Dproxy.httpsPort=$httpProxyPort"
-RUN echo $ANT_OPTS
 ENV ZOOKEEPER_VER 3.4.8
 ENV EXHIBITOR_VER 1.5.6
 ENV GRADLE_VER 3.0
@@ -68,7 +59,3 @@ EXPOSE 2181 2888 3888 8099
 VOLUME [ "/zookeeper/data", "/zookeeper/logs", "/opt/zookeeper/conf" ]
 
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]
-
-ENV ANT_OPTS ""
-ENV http_proxy ""
-ENV https_proxy ""

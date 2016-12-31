@@ -4,17 +4,6 @@ MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
 USER root
 
-ARG httpProxyHost
-ARG httpProxyPort
-
-ENV http_proxy ${http_proxy}
-ENV https_proxy ${https_proxy}
-ENV no_proxy ${no_proxy}
-ENV httpProxyHost ${httpProxyHost}
-ENV httpProxyPort ${httpProxyPort}
-
-ENV ANT_OPTS "-Dproxy.httpHost=$httpProxyHost -Dproxy.httpPort=$httpProxyPort -Dproxy.httpsHost=$httpsProxyHost -Dproxy.httpsPort=$httpsProxyPort"
-
 ENV ZOOKEEPER_VER 3.4.8
 ENV EXHIBITOR_VER 1.5.6
 ENV GRADLE_VER 3.0

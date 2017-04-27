@@ -6,18 +6,19 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        image: mcapitanio/zookeeper:3.4.8
+        image: mcapitanio/zookeeper:3.5.3
         networks:
             - hadoop
         volumes:
-            - zookeeper_data:/zookeeper/data
-            - zookeeper_logs:/zookeeper/logs
+            - zookeeper_data:/tmp/zookeeper
+            - zookeeper_logs:/opt/zookeeper/logs
             - zookeeper_conf:/opt/zookeeper/conf
 
         ports:
             - "2181:2181"
             - "2888:2888"
             - "3888:3888"
+            - "8080:8080"
 
 volumes:
     zookeeper_data:

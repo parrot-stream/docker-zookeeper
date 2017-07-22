@@ -25,7 +25,7 @@ For example, if you want Apache ZooKeeper release 3.4.8 you can pull the image w
 
 Run with Docker Compose:
 
-    docker-compose -p docker up
+    docker-compose -p parrot up
 
 Setting the project name to *parrot* with the **-p** option is useful to share the named data volumes created by containers started with other Parrot docker-compose.yml configurations.
 

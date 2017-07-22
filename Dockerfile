@@ -1,4 +1,4 @@
-FROM mcapitanio/centos-java
+FROM parrotstream/centos-openjdk
 
 MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 

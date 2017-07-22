@@ -5,14 +5,13 @@ MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 USER root
 
 ENV ZOOKEEPER_VER 3.5.3
-
 ENV ZOOKEEPER_HOME /opt/zookeeper
 
 ENV PATH $ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOME/sbin:$PATH
 
 # Install needed packages
 RUN yum clean all; yum update -y
-RUN yum install -y ant which openssh-clients openssh-server python-setuptools git
+RUN yum install -y ant which openssh-clients openssh-server python-setuptools git iputils-ping
 RUN easy_install supervisor
 RUN yum clean all
 

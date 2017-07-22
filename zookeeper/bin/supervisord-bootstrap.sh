@@ -24,6 +24,7 @@ if [ $rc -ne 0 ]; then
     exit $rc
 fi
 
+
 echo -e "\n\n--------------------------------------------------------------------------------"
 echo -e "You can now access to the Zookeeper Admin Console:\n"
 echo -e "\tZookeeper Admin Console:         http://localhost:8080/commands"

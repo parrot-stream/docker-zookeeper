@@ -31,5 +31,5 @@ Setting the project name to *parrot* with the **-p** option is useful to share t
 
 ### Available tags:
 
-- Apache ZooKeeper 3.5.3 ([3.5.2](https://github.com/parrot-stream/docker-zookeeper/blob/3.5.3/Dockerfile), [latest](https://github.com/parrot-stream/docker-zookeeper/blob/latest/Dockerfile))
+- Apache ZooKeeper 3.5.3 ([3.5.3](https://github.com/parrot-stream/docker-zookeeper/blob/3.5.3/Dockerfile), [latest](https://github.com/parrot-stream/docker-zookeeper/blob/latest/Dockerfile))
 - Apache ZooKeeper 3.4.8 ([3.4.8](https://github.com/parrot-stream/docker-zookeeper/blob/3.4.8/Dockerfile))

@@ -10,32 +10,26 @@ The *latest* tag of this image is build with the [latest stable](https://zookeep
 
 You can pull it with:
 
-    docker pull mcapitanio/zookeeper
+    docker pull parrotstream/zookeeper
 
 
 You can also find other images based on different Apache Hadoop releases, using a different tag in the following form:
 
-    docker pull mcapitanio/zookeeper:[zookeeper-release]
+    docker pull parrotstream/zookeeper:[zookeeper-release]
 
 
 For example, if you want Apache ZooKeeper release 3.4.8 you can pull the image with:
 
-    docker pull mcapitanio/zookeeper:3.4.8
+    docker pull parrotstream/zookeeper:3.4.8
 
 
 Run with Docker Compose:
 
-    docker-compose -p docker up
+    docker-compose -p parrot up
 
-Setting the project name to *docker* with the **-p** option is useful to share the named data volumes created by containers started with other docker-compose.yml configurations.
-
-There are 3 named volumes defined:
-
-- **zookeeper_conf** which points to ZooKeeper configuration directory
-- **zookeeper_logs** which points to ZooKeeper log directory
-- **zookeeper_data** which contains the ZooKeeper data and transaction logs
+Setting the project name to *parrot* with the **-p** option is useful to share the named data volumes created by containers started with other Parrot docker-compose.yml configurations.
 
 ### Available tags:
 
-- Apache ZooKeeper 3.5.3 ([3.5.2](https://github.com/mcapitanio/docker-zookeeper/blob/3.5.3/Dockerfile), [latest](https://github.com/mcapitanio/docker-zookeeper/blob/latest/Dockerfile))
-- Apache ZooKeeper 3.4.8 ([3.4.8](https://github.com/mcapitanio/docker-zookeeper/blob/3.4.8/Dockerfile))
+- Apache ZooKeeper 3.5.3 ([3.5.2](https://github.com/parrot-stream/docker-zookeeper/blob/3.5.3/Dockerfile), [latest](https://github.com/parrot-stream/docker-zookeeper/blob/latest/Dockerfile))
+- Apache ZooKeeper 3.4.8 ([3.4.8](https://github.com/parrot-stream/docker-zookeeper/blob/3.4.8/Dockerfile))

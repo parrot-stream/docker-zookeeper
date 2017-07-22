@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
 
@@ -6,25 +6,15 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        image: mcapitanio/zookeeper:3.5.3
+        image: parrotstream/zookeeper:3.5.3
         networks:
-            - hadoop
-        volumes:
-            - zookeeper_data:/tmp/zookeeper
-            - zookeeper_logs:/opt/zookeeper/logs
-            - zookeeper_conf:/opt/zookeeper/conf
-
+            - parrot
         ports:
             - "2181:2181"
             - "2888:2888"
             - "3888:3888"
             - "8080:8080"
 
-volumes:
-    zookeeper_data:
-    zookeeper_logs:
-    zookeeper_conf:
-
 networks:
-    hadoop:
+    parrot:
         driver: bridge

@@ -27,7 +27,7 @@ Run with Docker Compose:
 
     docker-compose -p parrot up
 
-Setting the project name to *parrot* with the **-p** option is useful to share the named data volumes created by containers started with other Parrot docker-compose.yml configurations.
+Setting the project name to *parrot* with the **-p** option is useful to share the network created by containers started with other Parrot docker-compose.yml configurations.
 
 ### Available tags:
 

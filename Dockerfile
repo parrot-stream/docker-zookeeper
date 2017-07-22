@@ -1,4 +1,4 @@
-FROM mcapitanio/centos-java
+FROM parrotstream/centos-openjdk
 
 MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
@@ -37,7 +37,5 @@ RUN chmod 600 /root/.ssh/config
 RUN chown root:root /root/.ssh/config
 
 EXPOSE 2181 2888 3888 8080
-
-VOLUME [ "/tmp/zookeeper", "/opt/zookeeper/logs", "/opt/zookeeper/conf" ]
 
 ENTRYPOINT ["supervisord", "-c", "/etc/supervisord.conf", "-n"]

@@ -6,7 +6,7 @@ services:
       dockerfile: Dockerfile
     image: parrotstream/zookeeper:latest
     networks:
-    - hadoop
+    - parrot
     ports:
     - 2181:2181
     - 2888:2888
@@ -20,6 +20,6 @@ services:
 networks:
   default:
     external:
-      name: hadoop
-  hadoop:
+      name: parrot
+  parrot:
     driver: bridge

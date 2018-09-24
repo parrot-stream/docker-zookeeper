@@ -22,7 +22,6 @@ For example, if you want Apache ZooKeeper release 3.4.8 you can pull the image w
 
     docker pull parrotstream/zookeeper:3.4.8
 
-
 Run with Docker Compose:
 
     docker-compose -p parrot up
@@ -31,5 +30,7 @@ Setting the project name to *parrot* with the **-p** option is useful to share t
 
 ### Available tags:
 
-- Apache ZooKeeper 3.5.3 ([3.5.3](https://github.com/parrot-stream/docker-zookeeper/blob/3.5.3/Dockerfile), [latest](https://github.com/parrot-stream/docker-zookeeper/blob/latest/Dockerfile))
+- Apache ZooKeeper 3.5.4 ([3.5.4](https://github.com/parrot-stream/docker-zookeeper/blob/3.5.4/Dockerfile), [latest](https://github.com/parrot-stream/docker-zookeeper/blob/latest/Dockerfile))
+- Apache ZooKeeper 3.5.3 ([3.5.3](https://github.com/parrot-stream/docker-zookeeper/blob/3.5.3/Dockerfile))
+- Apache ZooKeeper 3.4.13 ([3.4.13](https://github.com/parrot-stream/docker-zookeeper/blob/3.4.13/Dockerfile))
 - Apache ZooKeeper 3.4.8 ([3.4.8](https://github.com/parrot-stream/docker-zookeeper/blob/3.4.8/Dockerfile))

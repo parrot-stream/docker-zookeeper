@@ -1,25 +1,22 @@
-version: '3'
+version: "3"
+
 services:
-  zookeeper:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: parrotstream/zookeeper:latest
-    networks:
-    - parrot
-    ports:
-    - 2181:2181
-    - 2888:2888
-    - 3888:3888
-    - 8080:8080
-    - 4200:4200
-    environment:
-      SERVER_HTTP_PORT: 9000
-      API_HOST: localhost
-      API_PORT: 9000
+
+    zookeeper:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: parrotstream/zookeeper:latest
+        networks:
+            - parrot
+        ports:
+            - 2181:2181
+            - 2888:2888
+            - 3888:3888
 networks:
-  default:
-    external:
-      name: parrot
-  parrot:
-    driver: bridge
+
+    default:
+      external:
+        name: parrot
+    parrot:
+        driver: bridge

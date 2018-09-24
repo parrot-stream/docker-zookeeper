@@ -6,13 +6,17 @@ services:
         build:
             context: .
             dockerfile: Dockerfile
-        image: parrotstream/zookeeper:3.4.8
+        image: parrotstream/zookeeper:3.4.13
         networks:
             - parrot
         ports:
-            - "2181:2181"
-            - "2888:2888"
-            - "3888:3888"
+            - 2181:2181
+            - 2888:2888
+            - 3888:3888
 networks:
+
+    default:
+      external:
+        name: parrot
     parrot:
         driver: bridge

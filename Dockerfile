@@ -4,7 +4,7 @@ MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
 USER root
 
-ENV ZOOKEEPER_VER 3.4.13
+ENV ZOOKEEPER_VER 3.5.4
 
 ENV ZOOKEEPER_HOME /opt/zookeeper
 

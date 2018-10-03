@@ -1,22 +1,12 @@
 version: "3"
-
 services:
-
-    zookeeper:
-        build:
-            context: .
-            dockerfile: Dockerfile
-        image: parrotstream/zookeeper:3.5.4
-        networks:
-            - parrot
-        ports:
-            - 2181:2181
-            - 2888:2888
-            - 3888:3888
-networks:
-
-    default:
-      external:
-        name: parrot
-    parrot:
-        driver: bridge
+  zookeeper:
+    container_name: zookeeper
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: parrotstream/zookeeper:3.5.4
+    ports:
+      - 2181:2181
+      - 2888:2888
+      - 3888:3888

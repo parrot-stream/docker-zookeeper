@@ -36,20 +36,6 @@ COPY ./etc /etc
 RUN mkdir -p /zookeeper/data; \
     mkdir -p /zookeeper/logs
 
-# Install Gradle
-RUN wget -N https://services.gradle.org/distributions/gradle-$GRADLE_VER-all.zip; \
-    unzip gradle-$GRADLE_VER-all.zip -d /opt; \
-    mv /opt/gradle-$GRADLE_VER $GRADLE_HOME; \
-    rm gradle-$GRADLE_VER-all.zip
-
-# Netflix Exhibitor
-RUN git clone -b v$EXHIBITOR_VER https://github.com/Netflix/exhibitor
-RUN cd exhibitor; \
-    ./gradlew clean distTar
-RUN ls -latr exhibitor
-RUN tar -xvf exhibitor/exhibitor-standalone/build/distributions/exhibitor-standalone-1.5.7-SNAPSHOT.tar -C /opt; \
-    mv /opt/exhibitor-standalone-1.5.7-SNAPSHOT $EXHIBITOR_HOME
-
 ADD ssh_config /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
 RUN chown root:root /root/.ssh/config

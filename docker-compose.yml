@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: parrotstream/zookeeper:3.5.3
+    image: parrotstream/zookeeper:3.4.8
     ports:
       - 2181:2181
       - 2888:2888

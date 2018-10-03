@@ -26,8 +26,6 @@ Run with Docker Compose:
 
     docker-compose -p parrot up
 
-Setting the project name to *parrot* with the **-p** option is useful to share the network created by containers started with other Parrot docker-compose.yml configurations.
-
 ### Available tags:
 
 - Apache ZooKeeper 3.5.3 ([3.5.3](https://github.com/parrot-stream/docker-zookeeper/blob/3.5.3/Dockerfile), [latest](https://github.com/parrot-stream/docker-zookeeper/blob/latest/Dockerfile))

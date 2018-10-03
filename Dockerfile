@@ -1,4 +1,4 @@
-FROM parrotstream/centos-openjdk
+FROM parrotstream/centos-openjdk:8
 
 MAINTAINER Matteo Capitanio <matteo.capitanio@gmail.com>
 
@@ -16,7 +16,7 @@ ENV PATH $GRADLE_HOME/bin:$EXHIBITOR_HOME/bin:$ZOOKEEPER_HOME/bin:$ZOOKEEPER_HOM
 
 # Install needed packages
 RUN yum clean all; yum update -y
-RUN yum install -y ant which openssh-clients openssh-server python-setuptools git
+RUN yum install -y ant which openssh-clients openssh-server python-setuptools git svn
 RUN easy_install supervisor
 RUN yum clean all
 

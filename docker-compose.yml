@@ -1,4 +1,4 @@
-version: "3"
+version: "3.7"
 services:
   zookeeper:
     container_name: zookeeper
@@ -10,3 +10,7 @@ services:
       - 2181:2181
       - 2888:2888
       - 3888:3888
+networks:
+  parrot:
+    name: parrot_default
+    driver: bridge
